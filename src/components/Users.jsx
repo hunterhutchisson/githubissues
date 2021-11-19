@@ -9,13 +9,8 @@ const Users = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        //send form info to backend
-        
-        let formObj = {
-            textValue
-        }
         const usersData = async () => {
-            let response = await fetch(`https://api.github.com/users/${formObj.textValue}`)
+            let response = await fetch(`https://api.github.com/users/${textValue}`)
             let data = await response.json()
             setTextValue("")
             setSearchedUser(data)
